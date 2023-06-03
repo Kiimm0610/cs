@@ -1,0 +1,11 @@
+@mixin style-text($fs, $fw, $color) {
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color !important;
+}
+
+@mixin button ($bg, $radius, $text) {
+    background: $bg;
+    border-radius: $radius;
+    text-align: $text;
+}
