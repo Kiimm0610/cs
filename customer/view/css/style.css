@@ -14,27 +14,41 @@ body {
 }
 
 .btn {
-  display: inline-block;
-  min-width: 118px;
-  padding: 0px 16px;
-  line-height: 50px;
   font-size: 1.8rem;
   font-weight: 600;
   color: #f2f2f2 !important;
   background: #191919;
   border-radius: 999px;
   text-align: center;
-}
-.btn:hover {
-  color: #f2f2f2;
+  position: relative;
+  display: inline-block;
+  min-width: 118px;
+  padding: 0px 16px;
+  line-height: 50px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
 }
 
-.banner .btn-banner {
-  transition: all 0.7s;
+.banner .btn-banner::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  transform-origin: center;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: transform 0.45s ease-in-out;
 }
 .banner .btn-banner:hover {
-  background: #f2f2f2;
   color: #191919 !important;
+}
+.banner .btn-banner:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
 }
 
 header .navbar-brand {
