@@ -10,3 +10,10 @@
     }
 }
 
+.banner .btn-banner {
+    transition: all .7s;
+    &:hover {
+        background: $color-1;
+        color: $color-2 !important;
+    }
+}
