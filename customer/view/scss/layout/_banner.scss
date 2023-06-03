@@ -17,7 +17,7 @@
     }
 
     .banner__heading {
-        @include style-text($fs-3, $fw-3, $color-1);
+        @include style-text($fs-5, $fw-3, $color-1);
     }
 
     .star-rating a {
@@ -28,8 +28,15 @@
         }
     }
 
+    .banner__desc {
+        @include style-text($fs-3, $fw-3, $color-1);
+    }
+
+    .banner__price {
+        @extend .banner__desc;
+    }
+
     .btn-banner i {
         padding: 0 5px;
     }
-
 }
