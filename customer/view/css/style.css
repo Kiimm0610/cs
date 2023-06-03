@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  display: inline-block;
+  min-width: 118px;
+  padding: 0px 16px;
+  line-height: 50px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f2f2f2 !important;
+  background: #191919;
+  border-radius: 999px;
+  text-align: center;
+}
+.btn:hover {
+  color: #f2f2f2;
+}
+
+header .navbar-brand {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f2f2f2 !important;
+}
+header .navbar-brand i {
+  padding: 0 10px;
+}
+header .nav-link {
+  color: #f2f2f2 !important;
+}
+header .header__shop .badge {
+  display: inline-block;
+  position: relative;
+  top: -10px;
+  left: -12px;
+  padding: 0.2em 0.5rem;
+  z-index: 1;
+}
+header .header__shop .rounded-pill {
+  border: 1px solid #191919;
+  border-radius: 50% !important;
+  background: #f2f2f2;
+  color: #191919 !important;
+}
+
+nav.black {
+  background: rgba(0, 0, 0, 0.744);
+}
+
+.banner {
+  height: 100vh;
+  background: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+.banner .row {
+  padding: 100px 0;
+}
+.banner .banner__phone__image img {
+  width: 800px;
+}
+.banner img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.banner .banner__heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #f2f2f2 !important;
+}
+.banner .star-rating a {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 10px;
+}
+.banner .star-rating a:hover {
+  color: #f2f2f2;
+}
+.banner .btn-banner i {
+  padding: 0 5px;
+}/*# sourceMappingURL=style.css.map */

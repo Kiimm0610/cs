@@ -1,0 +1,12 @@
+.btn {
+    display: inline-block;
+    min-width: 118px;
+    padding: 0px $pd-btn;
+    line-height: 50px;
+    @include style-text($fs-1, $fw-3, $color-1);
+    @include button($color-2, 999px, center);
+    &:hover {
+        color: $color-1;
+    }
+}
+
