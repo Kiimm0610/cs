@@ -29,6 +29,14 @@ body {
   color: #f2f2f2;
 }
 
+.banner .btn-banner {
+  transition: all 0.7s;
+}
+.banner .btn-banner:hover {
+  background: #f2f2f2;
+  color: #191919 !important;
+}
+
 header .navbar-brand {
   font-size: 2rem;
   font-weight: 600;
