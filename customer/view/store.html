@@ -90,10 +90,21 @@
                     </ul>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link header__shop" href="#">
+                            <a
+                                class="nav-link header__shop js-toggle-cart active"
+                                role="button"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                            >
                                 <div>
-                                    <i class="fa-solid fa-store"></i>
-                                    <span class="badge rounded-pill">0</span>
+                                    <i
+                                        class="fa-solid fa-xl fa-shopping-cart"
+                                    ></i>
+                                    <span
+                                        class="badge rounded-pill badge-notification bg-light text-dark"
+                                        id="cartCount"
+                                        >0</span
+                                    >
                                 </div>
                                 Cart
                             </a>
@@ -242,7 +253,7 @@
                                 <div class="card text-black h-100">
                                     <div class="content-overlay"></div>
                                     <img
-                                        src="./img/iphone.png"
+                                        src="./img/s22.png"
                                         class="card-img"
                                         alt="Phone Img"
                                     />
@@ -606,6 +617,78 @@
                 </div>
             </main>
         </div>
+        <div class="meh">
+            <div class="cart is-hidden">
+                <div class="cart__overlay"></div>
+                <div class="cart__contents">
+                    <div class="cart__products">
+                        <h2>Shopping Cart</h2>
+                        <p class="microcopy">
+                            An overview of your selected products.
+                        </p>
+                        <div class="products" id="cartList"></div>
+                    </div>
+                    <div class="cart__totals">
+                        <table class="totals">
+                            <tbody>
+                                <tr>
+                                    <th
+                                        class="align-left font-normal tertiary"
+                                    ></th>
+                                    <td class="align-right" id="subTotal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="align-left font-normal tertiary">
+                                        Shipping <small>(estimated)</small>
+                                    </th>
+                                    <td class="align-right" id="shipping">
+                                        $0
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="align-left font-normal tertiary">
+                                        Tax <small>(estimated)</small>
+                                    </th>
+                                    <td class="align-right" id="tax">$0</td>
+                                </tr>
+                                <tr>
+                                    <th class="align-left">Total</th>
+                                    <td class="align-right" id="priceTotal">
+                                        $0
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" class="tertiary">
+                                        <small
+                                            >Estimations based on New York,
+                                            United States</small
+                                        >
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="form__footer">
+                            <button class="btn first js-toggle-cart">
+                                Continue Shopping
+                            </button>
+                            <button class="btn yellow-btn" onclick="payNow()">
+                                Pay Now
+                            </button>
+                            <button
+                                class="btn me-5 ms-0 px-4 red-btn"
+                                onclick="emptyCart()"
+                                id="emptyCart"
+                            >
+                                <i class="fa-solid fa-trash me-2"></i> Empty
+                                Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script
@@ -624,6 +707,10 @@
             crossorigin="anonymous"
         ></script>
         <script>
+            // toggle shopping cart
+            $(".js-toggle-cart, .cart__overlay").on("click", function () {
+                $(".cart").toggleClass("is-hidden");
+            });
             // change nav bar color when scroll
             $(window).on("scroll", function () {
                 if (this.scrollY > 100) {
