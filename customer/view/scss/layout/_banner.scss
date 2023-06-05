@@ -17,7 +17,7 @@
     }
 
     .banner__heading {
-        @include style-text($fs-5, $fw-3, $color-1);
+        @include style-text($fs-6, $fw-3, $color-1);
     }
 
     .star-rating a {

@@ -1,7 +1,11 @@
 //Color
 $color-gardient: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 $color-header-move: rgba(0, 0, 0, 0.744);
-$color-star:rgba(255, 255, 255, 0.5);
+$color-star: rgba(255, 255, 255, 0.5);
+$color-shadow: #293e63;
+$color-btn-card: #daa300;
+$color-btn-hover: #f0b70e;
+$color-btn-active: #ffdc74;
 $color-1: #f2f2f2;
 $color-2: #191919;
 
@@ -12,11 +16,13 @@ $pd-1: 10px;
 $pd-2: 20px;
 
 //Font size
+$fs-0: 1.35rem;
 $fs-1: 1.8rem;
 $fs-2: 2rem;
 $fs-3: 2.5rem;
 $fs-4: 3rem;
 $fs-5: 4rem;
+$fs-6: 5.5rem;
 
 //Font Weight
 $fw-1: 400;
