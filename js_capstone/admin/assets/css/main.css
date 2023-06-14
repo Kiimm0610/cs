@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* html,body{
+  font-family: 'Playfair Display', serif;
+} */
+.text-light{
+  font-family: 'Playfair Display', serif;
+}
+.phoneBanner{
+  background-color: rgb(29 38 108 / 70%);
+}
+.black{
+  background-color: rgb(0 0 0 / 80%);
+}
+.nav1{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.navbar-brand span{
+  margin-left: 10px;
+}
+#btnEdit{
+  background-color: #f0b80f;
+  color: white;
+  margin: 0 5px;
+}
+#btnEdit:hover{
+  color: black;
+}
+.edit{
+  padding-right: 7px;
+}
+#btnDelete{
+  background-color: #e7380c;
+  color: white;
+}
+#btnDelete:hover{
+  color: black;
+}
+.delete{
+  padding-right:5px ;
+}
+#header-title{
+  text-align: center;
+}
+#addPhoneForm{
+  background-color: #294d5c;
+  color: white;
+}
+#addPhoneForm:hover{
+  background-color: white;
+  color: #294d5c;
+}
+.img-phone{
+  width: 150px;
+  height: 150px;
+}
+#btnUpdate{
+  background-color: #f0b80f;
+}
+#btnClose{
+  background-color: #294d5c;
+}
+.text-reset{
+ color: inherit!important;
+  margin-right: 20px;
+}
+.content{
+  margin-right: 30px;
+}
+.text-center{
+  background-color: rgba(0, 0, 0, 0.05)
+}
+.gradient-custom{
+  background: linear-gradient(rgba(29, 38, 113, 0.8), rgba(195, 55, 100, 0.8));
+}
+.icon a{
+  text-decoration: revert;
+}
+.footer-name a{
+  text-decoration: revert;
+}
