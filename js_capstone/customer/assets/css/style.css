@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  margin-top: 150px;
+}
+.img-contact{
+  display: flex;
+  gap: 250px;
+  justify-content: center;
+  text-align: center;
+  
+}
+.img-left{
+  width: 50%;
+ background-color: black;
+}
+.img-right{
+  width: 50%;
+  background-color: black;
+}
+.img-right img{
+  width: 68%;
+  margin: 50px;
+  border: 3px solid;
+  background-color: aliceblue;
+}
+.img-left img{
+  width: 70%;
+}
+
