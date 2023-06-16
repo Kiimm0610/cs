@@ -1,5 +1,4 @@
 header {
-   
     .navbar-brand {
         @include style-text($fs-2, $fw-3, $color-1);
         i {
@@ -25,6 +24,12 @@ header {
             border-radius: 50% !important;
             background: $color-1;
             color: $color-2 !important;
+        }
+    }
+
+    .nav-shop {
+        @media screen and (max-width: 1000px) {
+            text-align: center;
         }
     }
 }
