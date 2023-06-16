@@ -8,7 +8,7 @@ export class Services {
         return res.data;
       } catch (err) {
         console.log(err);
-      }
+      }deletePhone
     };
   
     addPhone = async (phone) => {

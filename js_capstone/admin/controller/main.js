@@ -1,13 +1,10 @@
 const getEle = (id) => document.getElementById(id);
 const resetForm = (formId) => getEle(formId).reset();
 
-
 import { Services } from "../services/phoneService.js";
-import { CustomModal, Helper } from './helper.js';
-import { Validation } from './validation.js';
-import { Phone } from '../model/ManageCart.js';
-
-
+import { CustomModal, Helper } from "./helper.js";
+import { Validation } from "./validation.js";
+import { Phone } from "../model/ManageCart.js";
 
 const service = new Services();
 const helper = new Helper();
@@ -15,7 +12,7 @@ const validation = new Validation();
 
 const renderList = async () => {
     const phoneList = await service.getPhones();
-    let content = '';
+    let content = "";
     phoneList.forEach((ele) => {
         content += ` <tr>
       <td>${ele.id}</td>
@@ -33,39 +30,39 @@ const renderList = async () => {
       </td>
       </tr>`;
     });
-    getEle('tablePhone').innerHTML = content;
+    getEle("tablePhone").innerHTML = content;
 };
 
 window.onload = async () => renderList();
 
-getEle('addPhoneForm').onclick = () => {
+getEle("addPhoneForm").onclick = () => {
     helper.clearTB();
-    getEle('btnUpdate').style.display = 'none';
-    getEle('btnAddPhone').style.display = 'inline-block';
+    getEle("btnUpdate").style.display = "none";
+    getEle("btnAddPhone").style.display = "inline-block";
 };
 
-getEle('btnAddPhone').onclick = async () => {
+getEle("btnAddPhone").onclick = async () => {
     const phoneList = await service.getPhones();
     if (!validation.isValid(phoneList)) return;
     const inputs = helper.getInputValue();
-    let phone = new Phone('', ...inputs);
+    let phone = new Phone("", ...inputs);
     await service.addPhone(phone);
     renderList();
-    resetForm('formPhone');
+    resetForm("formPhone");
     document.getElementById("btnClose")[2].click();
 };
 
 window.btnEdit = async (id) => {
     helper.clearTB();
-    getEle('btnUpdate').style.display = 'inline-block';
-    getEle('btnAddPhone').style.display = 'none';
+    getEle("btnUpdate").style.display = "inline-block";
+    getEle("btnAddPhone").style.display = "none";
 
     let data = await service.getPhoneById(id);
     let arrObjValue = Object.keys(data).map((k) => data[k]);
     arrObjValue.pop();
     helper.fill(arrObjValue);
 
-    getEle('btnUpdate').onclick = async () => {
+    getEle("btnUpdate").onclick = async () => {
         const phoneList = await service.getPhones();
         if (!validation.isValid(phoneList, true)) return;
 
@@ -73,17 +70,12 @@ window.btnEdit = async (id) => {
         let phone = new Phone(id, ...inputs);
         await service.updatePhone(phone);
         renderList();
-        CustomModal.alertSuccess('Update phone successfully');
+        CustomModal.alertSuccess("Update phone successfully");
     };
 };
 
-window.btnDelete = async (id) => {
-    getEle('btnDelete').onclick = async () => {
-        await service.deletePhone(id);
-        renderList();
-
-    }
-
-
+const btnDelete = async (id) => {
+    await service.deletePhone(id);
+    renderList();
 };
-
+window.btnDelete = btnDelete;
