@@ -105,6 +105,11 @@ header .header__shop .rounded-pill {
   background: #f2f2f2;
   color: #191919 !important;
 }
+@media screen and (max-width: 1000px) {
+  header .nav-shop {
+    text-align: center;
+  }
+}
 
 nav.black {
   background: rgba(0, 0, 0, 0.744);
@@ -274,6 +279,17 @@ nav.black {
   justify-content: space-between;
   margin-top: 24px;
 }
+@media screen and (max-width: 970px) {
+  .form__footer {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 970px) {
+  .form__footer .btn {
+    padding: 0 13px;
+    margin: 5px 0;
+  }
+}
 
 .red-btn {
   background-color: #df461f;
@@ -363,6 +379,11 @@ small {
   background-color: #fff;
   transition: all 0.25s ease-in-out;
   transform: translate(-100%, 0);
+}
+@media screen and (max-width: 900px) {
+  .cart__contents {
+    width: 100%;
+  }
 }
 
 .cart__products,
