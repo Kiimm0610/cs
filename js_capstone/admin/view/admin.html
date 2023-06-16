@@ -2,42 +2,48 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Quản lý nhân viên</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberPhone</title>
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
-	<!-- Bootstrap 4 -->
-	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-   <!-- FONT GOOGLE -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-	
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <!-- FONT GOOGLE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
 </head>
 
 
-<body >
+<body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark black fixed-top mb-5">
-      <div class="container" >
+      <div class="container">
 
         <a class="navbar-brand me-5" href="#"> <i class="fa-lg fa-solid fa-robot me-3"></i><span>Cyber Phone</span> </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor01" >
+        <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto nav1">
             <li class="nav-item text-center mx-5">
-              <a class="nav-link active" href="../../index.html" role="button" aria-haspopup="true" aria-expanded="false">
-                <div >
+              <a class="nav-link active" href="../../customer/index.html" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <div>
                   <i class="fas fa-home fa-xl mb-1"></i>
                 </div>
                 Home
@@ -45,18 +51,19 @@
             </li>
 
             <li class="nav-item text-center">
-              <a class="nav-link active" href="../../customer/view/client.html" role="button" aria-haspopup="true" aria-expanded="false">
-              <div >
-                <i class="fa-solid fa-xl fa-store"></i>
-              </div>
-              Store
-            </a>
+              <a class="nav-link active" href="../../../customer/view/store.html" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <div>
+                  <i class="fa-solid fa-xl fa-store"></i>
+                </div>
+                Store
+              </a>
             </li>
           </ul>
           <ul class="navbar-nav me-auto nav2">
             <li class="nav-item text-center ">
               <a class="nav-link  js-toggle-cart active" role="button" aria-haspopup="true" aria-expanded="false">
-                <div >
+                <div>
                   <i class="fa-solid fa-xl fa-shopping-cart"></i>
                   <span class="badge rounded-pill badge-notification bg-light text-dark" id="cartCount"></span>
                 </div>
@@ -69,148 +76,154 @@
     </nav>
   </header>
 
-  <div class="container py-5" id="content-wrap" >
+  <div class="container py-5" id="content-wrap">
     <main role="main" class="mt-5">
-      <div class="d-flex justify-content-between mb-2 py-3 px-2 phoneBanner" >
+      <div class="d-flex justify-content-between mb-2 py-3 px-2 phoneBanner">
         <h3 class="text-light">Phone Management</h3>
-        <div class="text-right" >
-          <button type="button" class="btn btn-banner" data-bs-toggle="modal" data-bs-target="#exampleModal" id="addPhoneForm" >
+        <div class="text-right">
+          <button type="button" class="btn btn-banner" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            id="addPhoneForm">
             <i class="fa-solid fa-circle-plus me-2"></i> Add Phone
           </button>
         </div>
       </div>
-     
-      <div class=" table-responsive" >
-      <table class="table display" id="myTable">
-        <thead class="">
-          <tr> 
-            <th>#</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Photo</th>
-            <th>Discription</th>
-            <th><em class="fa fa-cog"></em> Action</th>
-          </tr>
-        </thead>
-        <tbody id="tablePhone"> <tr>
-    <td>1</td>
-    <td><strong>Hayfa Galloway</strong></td>
-    <td>$10000</td>
-    <td><img class="img-phone" src="../../customer/assets/img/admin2.png" russo="" alt="phone-img" ></td>
-    <td>Theodore Dillon</td>
-    <td class="" >
-      <button class="btn my-3 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="btnEdit('1')" id="btnEdit" fdprocessedid="8og04n">
-      <span class="edit">Edit</span><i class="fa fa-pencil-square ms-2"></i>
-    </button>
-    <button class="btn " onclick="btnDelete('1')" id="btnDelete" fdprocessedid="yh2spn">
-      <span class="delete">Delete</span> <i class="fa fa-trash ms-2"></i>
-    </button>
-  </td>
-    </tr> <tr>
-    <td>2</td>
-    <td><strong>abc</strong></td>
-    <td>$1000</td>
-    <td><img class="img-phone" src="../../customer/assets/img/admin2.png" alt="phone-img" ></td>
-    <td>asd</td>
-    <td >
-    <button class="btn my-3 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="btnEdit('2')" id="btnEdit" fdprocessedid="f74d4d">
-    <span class="edit">Edit</span><i class="fa fa-pencil-square ms-2"></i>
-    </button>
-    <button class="btn " onclick="btnDelete('2')" id="btnDelete" fdprocessedid="ubiyt5">
-    <span class="delete">Delete</span> <i class="fa fa-trash ms-2"></i>
-    </button>
-     </td>
-    </tr>
-     </tbody>
-      </table>
-    </div>
 
-      <div class="modal fade" id="exampleModal" >
-        <div class="modal-dialog" >
-          <div class="modal-content" >
+      <div class=" table-responsive">
+        <table class="table display" id="myTable">
+          <thead class="">
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Photo</th>
+              <th>Discription</th>
+              <th><em class="fa fa-cog"></em> Action</th>
+            </tr>
+          </thead>
+          <tbody id="tablePhone">
+            <!-- <tr>
+              <td>1</td>
+              <td><strong>Hayfa Galloway</strong></td>
+              <td>$10000</td>
+              <td><img class="img-phone" src="../../customer/assets/img/admin2.png" russo="" alt="phone-img"></td>
+              <td>Theodore Dillon</td>
+              <td class="">
+                <button class="btn my-3 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  onclick="btnEdit('1')" id="btnEdit" fdprocessedid="8og04n">
+                  <span class="edit">Edit</span><i class="fa fa-pencil-square ms-2"></i>
+                </button>
+                <button class="btn " onclick="btnDelete('1')" id="btnDelete" fdprocessedid="yh2spn">
+                  <span class="delete">Delete</span> <i class="fa fa-trash ms-2"></i>
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><strong>abc</strong></td>
+              <td>$1000</td>
+              <td><img class="img-phone" src="../../customer/assets/img/admin2.png" alt="phone-img"></td>
+              <td>asd</td>
+              <td>
+                <button class="btn my-3 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  onclick="btnEdit('2')" id="btnEdit" fdprocessedid="f74d4d">
+                  <span class="edit">Edit</span><i class="fa fa-pencil-square ms-2"></i>
+                </button>
+                <button class="btn " onclick="btnDelete('2')" id="btnDelete" fdprocessedid="ubiyt5">
+                  <span class="delete">Delete</span> <i class="fa fa-trash ms-2"></i>
+                </button>
+              </td>
+            </tr> -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal fade" id="exampleModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
             <header class="head-form mb-0">
               <h3 id="header-title">Phone Management</h3>
             </header>
-  
+            
 
-            <div class="modal-body" >
+
+            <div class="modal-body">
               <form role="form" id="formPhone">
-              
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-mobile-screen-button"></i></span>
                     </div>
                     <input type="text" name="name" id="name" class="form-control input-sm" placeholder="Phone name">
                   </div>
                   <span class="sp-thongbao" id="tbname"></span>
                 </div>
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-regular fa-dollar-sign"></i></span>
                     </div>
                     <input type="text" name="name" id="price" class="form-control input-sm" placeholder="Price">
                   </div>
                   <span class="sp-thongbao" id="tbprice"></span>
                 </div>
-  
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-mobile-screen"></i></span>
                     </div>
                     <input type="text" name="email" id="screen" class="form-control input-sm" placeholder="Screen">
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbscreen"></span>
                 </div>
-  
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
                     </div>
                     <input type="text" name="name" id="backCam" class="form-control" placeholder="Back Camera">
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbbackCam"></span>
                 </div>
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-camera"></i></span>
                     </div>
                     <input type="text" name="name" id="frontCam" class="form-control" placeholder="Front Camera">
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbfrontCam"></span>
                 </div>
                 <div class="form-group">
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-link"></i></span>
                     </div>
                     <input type="text" name="name" id="img" class="form-control" placeholder="Image link">
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbimg"></span>
                 </div>
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-comment"></i></span>
                     </div>
                     <input type="text" name="name" id="desc" class="form-control" placeholder="Description">
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbdesc"></span>
                 </div>
-  
-             
-                <div class="form-group" >
-                  <div class="input-group" >
-                    <div class="input-group-prepend" >
+
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa-solid fa-signature"></i></span>
                     </div>
                     <select class="form-control" name="chucvu" id="type">
@@ -219,15 +232,15 @@
                       <option>Samsung</option>
                     </select>
                   </div>
-  
+
                   <span class="sp-thongbao" id="tbtype"></span>
                 </div>
-            
+
               </form>
             </div>
-  
-          
-            <div class="modal-footer" id="modal-footer" >
+
+
+            <div class="modal-footer" id="modal-footer">
               <button type="button" class="btn" id="btnAddPhone" style="display: none;">
                 Add Phone
               </button>
@@ -243,21 +256,21 @@
       </div>
     </main>
 
-    
+
 
   </div>
-  
 
- 
+
+
   <footer class="text-center text-lg-start bg-dark text-light gradient-custom">
-   
+
     <section class="d-flex justify-content-center p-4 border-bottom">
-     
-      <div class="me-5 d-none d-lg-block" >
+
+      <div class="me-5 d-none d-lg-block">
         <span class="content">Get connected with us on social networks:</span>
       </div>
-     
-      <div  class="icon">
+
+      <div class="icon">
         <a href="" class="me-4 text-reset">
           <i class="fab fa-facebook-f"></i>
         </a>
@@ -277,16 +290,16 @@
           <i class="fab fa-github"></i>
         </a>
       </div>
-      
+
     </section>
-   
+
     <section class="">
-      <div class="container text-center text-md-start mt-5" >
-       
-        <div class="row mt-3" >
-          
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" >
-           
+      <div class="container text-center text-md-start mt-5">
+
+        <div class="row mt-3">
+
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
             <h6 class="text-uppercase fw-bold mb-4">
               <i class="fa-lg fa-solid fa-robot me-3"></i>Cyber Phone
             </h6>
@@ -296,46 +309,46 @@
               best value products and devices in the market.
             </p>
           </div>
-          
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
-           
+
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
             <div class="footer-name">
-            <h6 class="text-uppercase fw-bold mb-4">Brands</h6>
-            <p>
-              <a href="#" class="text-reset">iPhone</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Sumsung</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Xiaomi</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Oppo</a>
-            </p>
+              <h6 class="text-uppercase fw-bold mb-4">Brands</h6>
+              <p>
+                <a href="#" class="text-reset">iPhone</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Sumsung</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Xiaomi</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Oppo</a>
+              </p>
+            </div>
           </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="footer-name">
+              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <p>
+                <a href="#" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#" class="text-reset">Help</a>
+              </p>
+            </div>
           </div>
-       
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" >
-          <div class="footer-name">
-            <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-            <p>
-              <a href="#" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#" class="text-reset">Help</a>
-            </p>
-          </div>
-          </div>
-         
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" >
-            
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
             <p><i class="fas fa-home me-3"></i> Da Nang, Thanh Khe, VN</p>
             <p>
@@ -345,29 +358,35 @@
             <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
             <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
           </div>
-          
+
         </div>
       </div>
     </section>
-    
-    <div class="text-center p-4" >
+
+    <div class="text-center p-4">
       © 2022 Copyright:
       <a class="text-reset fw-bold" href="">Cyber Phone</a>
     </div>
-   
+
   </footer>
 
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script type="module" src="../controller/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+  integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"
+  integrity="sha512-EKWWs1ZcA2ZY9lbLISPz8aGR2+L7JVYqBAYTq5AXgBkSjRSuQEGqWx8R1zAX16KdXPaCjOCaKE8MCpU0wcHlHA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module" src="../controller/main.js"></script>
 <!-- Bootstrap -->
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/popper.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="module" src="../controller/main.js"></script>
+
 
 
 
