@@ -151,6 +151,11 @@ nav.black {
 .banner .btn-banner i {
   padding: 0 5px;
 }
+@media screen and (max-width: 1000px) {
+  .banner .banner__phone__img {
+    display: none;
+  }
+}
 
 #content-wrap .row {
   gap: 30px 0px;

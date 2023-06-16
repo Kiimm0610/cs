@@ -39,4 +39,10 @@
     .btn-banner i {
         padding: 0 5px;
     }
+
+    .banner__phone__img {
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
+    }
 }
